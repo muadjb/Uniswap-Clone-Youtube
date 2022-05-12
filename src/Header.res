@@ -10,10 +10,7 @@ let make = () => {
     //   rel="noopener noreferrer">
     //   {"Uniswap Tutorial"->React.string}
     // </a>
-    <div
-      className="flex flex-col justify-between bg-gray-100 w-screen h-screen max-h-screen min-h-screen">
-      <Header /> <h1 className="text-xl"> {"Bye"->React.string} </h1>
-    </div>
+    <h1 className="text-xl"> {"Header"->React.string} </h1>
     // <a className="text-blue-400" > {"Uniswap Tutorial"->React.string}
     // </a>
 
