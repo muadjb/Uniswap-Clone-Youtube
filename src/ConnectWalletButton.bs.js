@@ -3,8 +3,11 @@
 import * as React from "react";
 
 function ConnectWalletButton(Props) {
-  return React.createElement("div", {
-              className: "flex items-center gap-x-1 cursor-pointer",
+  var classNameOpt = Props.className;
+  var className = classNameOpt !== undefined ? classNameOpt : "";
+  return React.createElement("button", {
+              className: "flex items-center gap-x-1 cursor-pointer " + className,
+              type: "button",
               onClick: (function (param) {
                   console.log("connect wallet button clicked");
                   

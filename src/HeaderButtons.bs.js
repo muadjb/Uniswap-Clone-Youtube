@@ -3,22 +3,30 @@
 import * as React from "react";
 import * as EthImage from "./EthImage.bs.js";
 import * as Ai from "react-icons/ai";
+import * as ConnectWalletButton from "./ConnectWalletButton.bs.js";
 import * as HiOutlineDotsVertical from "./HiOutlineDotsVertical.bs.js";
 
 function HeaderButtons(Props) {
+  var buttonClasses = "bg-gray-800 border border-gray-900 hover:border-gray-700 h-full rounded-2xl px-2 py-1";
   return React.createElement("div", {
-              className: "flex gap-x-4 items-center"
-            }, React.createElement("div", {
-                  className: "flex items-center gap-x-1 cursor-pointer",
+              className: "flex gap-x-4 items-center text-xs text-white"
+            }, React.createElement("button", {
+                  className: "flex items-center gap-x-1 cursor-pointer " + buttonClasses,
+                  type: "button",
                   onClick: (function (param) {
                       console.log("eth button clicked");
                       
                     })
-                }, React.createElement(EthImage.make, {}), React.createElement("span", undefined, "Ethereum"), React.createElement(Ai.AiOutlineDown, {})), React.createElement(HiOutlineDotsVertical.make, {
+                }, React.createElement(EthImage.make, {
+                      width: "12"
+                    }), React.createElement("span", undefined, "Ethereum"), React.createElement(Ai.AiOutlineDown, {})), React.createElement(ConnectWalletButton.make, {
+                  className: buttonClasses
+                }), React.createElement(HiOutlineDotsVertical.make, {
                   onClick: (function (param) {
                       console.log("clicked dots");
                       
-                    })
+                    }),
+                  className: buttonClasses
                 }));
 }
 

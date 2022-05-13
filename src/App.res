@@ -3,6 +3,6 @@ type root
 @send external render: (root, React.element) => unit = "render"
 
 switch ReactDOM.querySelector("#root") {
-| Some(root) => root->createRoot->render(<Main />)
+| Some(root) => root->createRoot->render(<Uniswap />)
 | None => ()
 }

@@ -3,11 +3,18 @@
 import * as React from "react";
 
 function EthImage(Props) {
+  var classNameOpt = Props.className;
+  var heightOpt = Props.height;
+  var widthOpt = Props.width;
+  var className = classNameOpt !== undefined ? classNameOpt : "";
+  var height = heightOpt !== undefined ? heightOpt : "20";
+  var width = widthOpt !== undefined ? widthOpt : "20";
   return React.createElement("img", {
+              className: className,
               alt: "eth logo",
-              height: "20",
+              height: height,
               src: "../assets/eth.png",
-              width: "20"
+              width: width
             });
 }
 

@@ -7,29 +7,35 @@ import * as Fi from "react-icons/fi";
 import * as SelectedNav_Store from "./SelectedNav_Store.bs.js";
 
 function Nav(Props) {
+  var match = Curry._2(SelectedNav_Store.useStore, undefined, undefined);
+  var selectedNav = match.selectedNav;
+  console.log("selectedNav", selectedNav);
   return React.createElement("nav", {
-              className: "flex items-center gap-x-4 py-2 px-4 bg-[#191B1F] rounded-3xl text-white text-sm"
+              className: "flex items-center gap-x-2 py-2 px-4 bg-[#191B1F] rounded-3xl text-white text-sm"
             }, React.createElement(NavItem.make, {
                   onClick: (function (param) {
                       return Curry._1(SelectedNav_Store.dispatch, /* SetSelectedNav */{
                                   _0: /* Swap */0
                                 });
                     }),
-                  children: "Swap"
+                  children: "Swap",
+                  className: /* Swap */0 === selectedNav ? "bg-gray-700" : ""
                 }), React.createElement(NavItem.make, {
                   onClick: (function (param) {
                       return Curry._1(SelectedNav_Store.dispatch, /* SetSelectedNav */{
                                   _0: /* Pool */1
                                 });
                     }),
-                  children: "Pool"
+                  children: "Pool",
+                  className: /* Pool */1 === selectedNav ? "bg-gray-700" : ""
                 }), React.createElement(NavItem.make, {
                   onClick: (function (param) {
                       return Curry._1(SelectedNav_Store.dispatch, /* SetSelectedNav */{
                                   _0: /* Vote */2
                                 });
                     }),
-                  children: "Vote"
+                  children: "Vote",
+                  className: /* Vote */2 === selectedNav ? "bg-gray-700" : ""
                 }), React.createElement("a", {
                   className: "",
                   href: "https://info.uniswap.org/#/",

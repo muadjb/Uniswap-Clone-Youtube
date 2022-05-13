@@ -7,8 +7,10 @@ var Icon = {};
 
 function HiOutlineDotsVertical(Props) {
   var onClick = Props.onClick;
+  var classNameOpt = Props.className;
+  var className = classNameOpt !== undefined ? classNameOpt : "";
   return React.createElement("div", {
-              className: "cursor-pointer",
+              className: "cursor-pointer " + className,
               onClick: onClick
             }, React.createElement(Hi.HiOutlineDotsVertical, {}));
 }

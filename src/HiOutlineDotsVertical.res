@@ -4,6 +4,6 @@ module Icon = {
 }
 
 @react.component
-let make = (~onClick) => {
-  <div className="cursor-pointer" onClick> <Icon /> </div>
+let make = (~onClick, ~className="") => {
+  <div className={`cursor-pointer ${className}`} onClick> <Icon /> </div>
 }
